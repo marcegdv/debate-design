@@ -25,19 +25,20 @@ const ZComponent = (
         };
     };
     const onClickAddAndContinue = (): void => {
-        window.alert(`Add ${quantity} and Continue!`);
+        window.alert(`Design nº 1 - Add ${quantity} and Continue!`);
     };
     const onClickContinueWithout = (): void => {
-        window.alert('Continue without adding!');
+        window.alert('Design nº 1 - Continue without adding!');
     };
 
     return (
-        <div className={styles.container}>
+        <div className={props?.dark ? styles.containerDark : styles.containerLight}>
             <WithoutInputBox
-                amount={690.456 * quantity}  hideCents={true} negativeRed={false}
-                value={quantity}
+                amount={1234.567 * quantity}  hideCents={true} negativeRed={false}
+                value={quantity} caption='por mes'
                 onClickMinus={onClickMinus} onClickPlus={onClickPlus}
                 plusDisabled={quantity === maxLimit}
+                dark={props?.dark}
             />
             <TwoButtons
                 primaryLabel='Agregar y continuar'
@@ -54,11 +55,18 @@ const ZComponent = (
 export default ZComponent;
 
 const styles = {
-    container: style({
+    containerLight: style({
         display: 'flex',
         flexDirection: 'column',
         gap: '16px',
         padding: '16px',
         backgroundColor: colors.backgroundLight,
+    }),
+    containerDark: style({
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px',
+        padding: '16px',
+        backgroundColor: colors.backgroundDark,
     }),
 };

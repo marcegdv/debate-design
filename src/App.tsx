@@ -1,8 +1,8 @@
 import FullWidth from './components/FullWidth';
 import Card from './components/Card';
 
-import TemplateV1 from './components/v1/ZComponent';
-import TemplateV2 from './components/v2/ZComponent';
+import ComponentV1 from './components/design1/Component';
+import ComponentV2 from './components/design2/Component';
 
 const App = (
     props: {
@@ -13,13 +13,13 @@ const App = (
     return (
         <FullWidth dark={isDark}>
             <FullWidth dark={isDark}>
-                <Card title='V1' dark={isDark}>
-                    <TemplateV1  dark={isDark}/>
+                <Card title='Diseño nº 1' dark={isDark}>
+                    <ComponentV1  dark={isDark}/>
                 </Card>
             </FullWidth>
             <FullWidth dark={isDark}>
-                <Card title='V2' dark={isDark}>
-                    <TemplateV2  dark={isDark}/>
+                <Card title='Diseño nº 2' dark={isDark}>
+                    <ComponentV2  dark={isDark}/>
                 </Card>
             </FullWidth>
         </FullWidth>

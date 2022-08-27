@@ -11,8 +11,9 @@ const FullWidth = (
         children?: JSX.Element | JSX.Element[];
     }
 ): JSX.Element => {
+    const darkLight: string = props?.dark ? styles.containerDark : styles.containerLight;
     return (
-        <div className={props?.dark ? styles.containerDark : styles.containerLight}>
+        <div className={styles.defaults + ' ' + darkLight}>
             {props.children}
         </div>
     );

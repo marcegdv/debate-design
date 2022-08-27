@@ -1,9 +1,8 @@
-import { useState } from 'react';
 import { style } from 'typestyle';
 import { colors } from '../../styles/colors';
 
 import Amount, { AmountProps } from '../Amount/Amount';
-import InputNumber, { InputNumberProps } from './InputNumber';
+import InputNumber, { InputNumberProps } from '../InputNumber/InputNumber';
 
 export type WithoutBoxInputProps = {
     amount: number,
@@ -11,21 +10,14 @@ export type WithoutBoxInputProps = {
     hideCents?: boolean,
     negativeRed?: boolean,
     value: number,
-    minLimit: number,
-    maxLimit: number,
-    dark?:boolean,
+    onClickMinus: Function,
+    onClickPlus: Function,
+    minusDisabled?: boolean,
+    plusDisabled?: boolean,
+    dark?: boolean,
 };
 
 const WithoutInputBox = (props: WithoutBoxInputProps): JSX.Element => {
-    const [currentValue, setCurrentValue] = useState<number>(props.value)
-
-    const onClickMinus = (): void => {
-
-    };
-    const onClickPlus = (): void => {
-
-    };
-
     const amountProps: AmountProps = {
         amount: props.amount,
         caption: props.caption || '',
@@ -35,10 +27,10 @@ const WithoutInputBox = (props: WithoutBoxInputProps): JSX.Element => {
     };
     const inputNumberProps: InputNumberProps = {
         value: props.value,
-        onClickMinus: onClickMinus,
-        onClickPlus: onClickPlus,
-        minusDisabled: false,
-        plusDisabled: false,
+        onClickMinus: props.onClickMinus,
+        onClickPlus: props.onClickPlus,
+        minusDisabled: props.minusDisabled,
+        plusDisabled: props.plusDisabled,
         dark: props.dark,
     };
     

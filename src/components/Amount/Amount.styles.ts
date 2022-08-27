@@ -30,7 +30,7 @@ const styles = {
         color: colors.textDanger,
     }),
     caption: style({
-        paddingLeft: '4px',
+        paddingLeft: '5px',
         paddingTop: '8px',
         fontSize: '16px',
         fontWeight: '200',

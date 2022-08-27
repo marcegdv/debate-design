@@ -33,7 +33,7 @@ const styles = {
         width: '100%',
         height: '40px',
         backgroundColor: colors.telefonica_green,
-        color: colors.textPrimaryLight,
+        color: colors.textLight,
         fontSize: '20px',
         fontWeight: '500',
         border: '2px solid ' + colors.telefonica_green,
@@ -44,7 +44,7 @@ const styles = {
             '&:hover:enabled': {
                 backgroundColor: colors.telefonica_green_dark,
                 borderColor: colors.telefonica_green_dark,
-                color: colors.textPrimaryLight
+                color: colors.textLight
             },
             '&:focus': {
                 border: '2px solid black',

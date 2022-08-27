@@ -3,12 +3,15 @@ import { colors } from "../../styles/colors";
 
 const styles = {
     containerLight: style({
-        padding: '8px',
         backgroundColor: colors.backgroundLight,
     }),
     containerDark: style({
-        padding: '8px',
         backgroundColor: colors.backgroundDark,
+    }),
+    defaults: style({
+        padding: '8px',
+        userSelect: 'none',
+        cursor: 'default',
     }),
 };
 
