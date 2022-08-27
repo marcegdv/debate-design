@@ -1,0 +1,16 @@
+export const colors = {
+    telefonica_green: '#77dd00',
+    telefonica_green_light: '#99ff00',
+    telefonica_green_dark: '#55bb00',
+    telefonica_sky: '#00a0f0',
+    backgroundDark: '#1f1f1f',
+    backgroundLight: '#fafafa',
+    cardBorder: '#ccc',
+    cardBorderDark: '#aaa',
+    cardBorderLight: '#eee',
+    text: '#4c4c4c',
+    textDark: '#2a2a2a',
+    textLight: '#fafafa',
+    textSecondary: '#7c7c7c',
+    textDanger: '#df1144',
+};
