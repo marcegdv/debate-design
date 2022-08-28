@@ -1,0 +1,1 @@
+Dos posibles soluciones para el componente WithoutBoxInput.
