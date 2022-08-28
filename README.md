@@ -1,1 +1,1 @@
-Dos posibles soluciones para el componente WithoutBoxInput.
+Dos posibles soluciones para el componente WithoutBoxInput, en funcionalidad y en UI.
