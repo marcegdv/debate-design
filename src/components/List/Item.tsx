@@ -42,7 +42,7 @@ const styles = {
         justifyContent: 'center',
         padding: '4px 4px 0px 0px',
         width: '24px',
-        color: colors.telefonica_green_dark,
+        color: colors.green_dark,
     }),
     label: style({
         display: 'flex',

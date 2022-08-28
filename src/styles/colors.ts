@@ -1,8 +1,8 @@
 export const colors = {
-    telefonica_green: '#77dd00',
-    telefonica_green_light: '#99ff00',
-    telefonica_green_dark: '#55bb00',
-    telefonica_sky: '#00a0f0',
+    green: '#77dd00',
+    green_light: '#99ff00',
+    green_dark: '#55bb00',
+    blue_sky: '#00a0f0',
     backgroundDark: '#1f1f1f',
     backgroundLight: '#fafafa',
     cardBorder: '#ccc',

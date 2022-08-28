@@ -20,7 +20,7 @@ const Highlight = (
 
     const fontWeight = styles[props.fontWeight || 'normal'];
     const color = stylesColor(props.color || colors.textLight);
-    const backgorundColor = stylesBackgorundColor(props.backgroundColor || colors.telefonica_sky);
+    const backgorundColor = stylesBackgorundColor(props.backgroundColor || colors.blue_sky);
 
     return (
         <span className={
