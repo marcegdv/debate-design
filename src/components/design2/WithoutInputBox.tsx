@@ -48,15 +48,13 @@ const WithoutInputBox = (
             props.onChange(add > props.maxLimit ? props.maxLimit : add);
             setClicked(true)
             if (add === props.maxLimit) setShowTT(true);
+        } else {
+            setShowTT(true);
         };
     };
 
     const handleCloseToolTip = (): void => {
         setShowTT(false);
-    };
-
-    const checkLimit = (): boolean => {
-        return props.value === props.maxLimit;
     };
 
     return (
@@ -79,8 +77,6 @@ const WithoutInputBox = (
                     value={props.value}
                     onClickMinus={onClickMinus}
                     onClickPlus={onClickPlus}
-                    minusDisabled={false}
-                    plusDisabled={checkLimit()}
                     dark={props.dark}
                 />
             </ToolTip>
