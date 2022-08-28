@@ -2,8 +2,11 @@ import { useState } from 'react';
 import { style } from 'typestyle';
 import { colors } from '../../styles/colors';
 
-import TwoButtons from '../Buttons/TwoButtons/TwoButtons';
+import Highlight from '../Texts/Highlight';
+import Item from '../List/Item';
+import Texts from '../Texts/Texts';
 import WithoutInputBox from './WithoutInputBox';
+import TwoButtons from '../Buttons/TwoButtons/TwoButtons';
 
 const ZComponent = (
     props: {
@@ -33,8 +36,19 @@ const ZComponent = (
 
     return (
         <div className={props?.dark ? styles.containerDark : styles.containerLight}>
+            <Highlight label='¡PROMO DIPONIBLE!' color='white'
+                backgroundColor={colors.textDanger} fontWeight='normal'
+            />
+            <div className={styles.benefits}>
+                <Item label='Un texto random...?' fontWeight='bold' />
+                <Item label='Lorem ipsum dolor sit amet!' fontWeight='normal' />
+                <Texts
+                    label='Excepteur sint occaecat cupidatat non proident.'
+                    color={colors.textDanger} fontWeight='normal'
+                />
+            </div>
             <WithoutInputBox
-                amount={1234.567 * quantity}  hideCents={true} negativeRed={false}
+                amount={1234.567 * quantity} hideCents={true} negativeRed={false}
                 value={quantity} caption='por mes'
                 onClickMinus={onClickMinus} onClickPlus={onClickPlus}
                 plusDisabled={quantity === maxLimit}
@@ -68,5 +82,9 @@ const styles = {
         gap: '16px',
         padding: '16px',
         backgroundColor: colors.backgroundDark,
+    }),
+    benefits: style({
+        display: 'flex',
+        flexDirection: 'column',
     }),
 };

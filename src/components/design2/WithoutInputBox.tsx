@@ -4,6 +4,7 @@ import { colors } from '../../styles/colors';
 
 import Amount, { AmountProps } from '../Amount/Amount';
 import InputNumber, { InputNumberProps } from '../InputNumber/InputNumber';
+import ToolTip from '../ToolTip';
 
 export type WithoutBoxInputProps = {
     amount: number,
@@ -13,6 +14,8 @@ export type WithoutBoxInputProps = {
     value: number,
     minLimit: number,
     maxLimit: number,
+    step?: number,
+    onChange: Function,
     dark?: boolean,
 };
 
@@ -25,10 +28,14 @@ const WithoutInputBox = (
         value: number,
         minLimit: number,
         maxLimit: number,
+        step?: number,
         onChange: Function,
         dark?: boolean,
     }
 ): JSX.Element => {
+    const [showTT, setShowTT] = useState<boolean>(false);
+    const [clicked, setClicked] = useState<boolean>(false);
+
     const onClickMinus = (): void => {
         if (props.value > props.minLimit) {
             props.onChange(props.value - 1);
@@ -36,8 +43,19 @@ const WithoutInputBox = (
     };
     const onClickPlus = (): void => {
         if (props.value < props.maxLimit) {
+            const add: number = props.value + 1;
             props.onChange(props.value + 1);
+            setClicked(true)
+            if (add === props.maxLimit) setShowTT(true);
         };
+    };
+
+    const handleCloseToolTip = (): void => {
+        setShowTT(false);
+    };
+
+    const checkLimit = (): boolean => {
+        return props.value === props.maxLimit;
     };
 
     const amountProps: AmountProps = {
@@ -47,19 +65,32 @@ const WithoutInputBox = (
         negativeRed: props.negativeRed,
         dark: props.dark,
     };
-    const inputNumberProps: InputNumberProps = {
-        value: props.value,
-        onClickMinus: onClickMinus,
-        onClickPlus: onClickPlus,
-        minusDisabled: false,
-        plusDisabled: props.value === props.maxLimit,
-        dark: props.dark,
-    };
 
     return (
         <div className={props.dark ? styles.containerDark : styles.containerLight}>
-            <Amount {...amountProps} />
-            <InputNumber {...inputNumberProps} />
+            <Amount
+                amount={props.amount}
+                caption={props.caption || ''}
+                hideCents={props.hideCents}
+                negativeRed={props.negativeRed}
+                dark={props.dark}
+            />
+            <ToolTip
+                id='in1'
+                label='¡Máximo 3 unidades!'
+                position='top'
+                show={showTT && clicked}
+                onClickClose={handleCloseToolTip}
+            >
+                <InputNumber
+                    value={props.value}
+                    onClickMinus={onClickMinus}
+                    onClickPlus={onClickPlus}
+                    minusDisabled={false}
+                    plusDisabled={checkLimit()}
+                    dark={props.dark}
+                />
+            </ToolTip>
         </div>
     );
 };

@@ -1,8 +1,8 @@
-import FullWidth from './components/FullWidth';
-import Card from './components/Card';
+import FullWidth from '../components/FullWidth';
+import Card from '../components/Card';
 
-import ComponentV1 from './components/design1/Component';
-import ComponentV2 from './components/design2/Component';
+import ComponentV1 from '../components/design1/Component';
+import ComponentV2 from '../components/design2/Component';
 
 const App = (
     props: {
