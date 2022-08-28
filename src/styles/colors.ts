@@ -15,3 +15,11 @@ export const colors = {
     textDanger: '#df1144',
     textWarning: '#ff7f0f',
 };
+
+export const dark = {
+
+};
+
+export const light = {
+
+};
