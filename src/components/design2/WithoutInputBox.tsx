@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { style } from 'typestyle';
 import { colors } from '../../styles/colors';
 
-import Amount, { AmountProps } from '../Amount/Amount';
-import InputNumber, { InputNumberProps } from '../InputNumber/InputNumber';
+import Amount from '../Amount/Amount';
+import InputNumber from '../InputNumber/InputNumber';
 import ToolTip from '../ToolTip';
 
 export type WithoutBoxInputProps = {
@@ -56,14 +56,6 @@ const WithoutInputBox = (
 
     const checkLimit = (): boolean => {
         return props.value === props.maxLimit;
-    };
-
-    const amountProps: AmountProps = {
-        amount: props.amount,
-        caption: props.caption || '',
-        hideCents: props.hideCents,
-        negativeRed: props.negativeRed,
-        dark: props.dark,
     };
 
     return (
