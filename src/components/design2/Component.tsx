@@ -10,13 +10,21 @@ import TwoButtons from '../Buttons/TwoButtons/TwoButtons';
 
 const ZComponent = (
     props: {
+        amount?: number,
+        hideCents?: boolean,
+        negativeRed?: boolean,
+        caption?: string,
+        value?: number,
+        minLimit?: number,
+        maxLimit?: number,
+        step?: number,
         dark?: boolean,
     }
 ): JSX.Element => {
-    const [quantity, setQuantity] = useState<number>(0);
-    const amount = 1234.567;
-    const minLimit = 0;
-    const maxLimit = 3;
+    const [quantity, setQuantity] = useState<number>(props?.value || 0);
+    const amount = props?.amount || 0;
+    const minLimit = props?.minLimit || 0;
+    const maxLimit = props?.maxLimit || 3;
 
     const onClickAddAndContinue = (): void => {
         window.alert(`Design nº 2 - Add ${quantity} and Continue!`);
@@ -27,7 +35,7 @@ const ZComponent = (
 
     return (
         <div className={props?.dark ? styles.containerDark : styles.containerLight}>
-            <Highlight label='¡PROMO DIPONIBLE!' color='white'
+            {/* <Highlight label='¡PROMO DIPONIBLE!' color='white'
                 backgroundColor={colors.textWarning} fontWeight='normal'
             />
             <div className={styles.benefits}>
@@ -37,11 +45,12 @@ const ZComponent = (
                     label='Excepteur sint occaecat cupidatat non proident.'
                     color={colors.textWarning} fontWeight='normal'
                 />
-            </div>
+            </div> */}
             <WithoutInputBox
-                amount={amount} caption='por mes' hideCents={true} negativeRed={false}
-                value={quantity} minLimit={minLimit} maxLimit={maxLimit} dark={props.dark}
-                onChange={setQuantity}
+                amount={amount} caption={props?.caption || ''}
+                hideCents={props?.hideCents || false} negativeRed={props?.hideCents || false}
+                value={quantity} minLimit={minLimit} maxLimit={maxLimit} step={1}
+                onChange={setQuantity} dark={props.dark}
             />
             <TwoButtons
                 primaryLabel='Agregar y continuar'

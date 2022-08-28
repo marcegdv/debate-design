@@ -10,21 +10,31 @@ import TwoButtons from '../Buttons/TwoButtons/TwoButtons';
 
 const ZComponent = (
     props: {
+        amount?: number,
+        hideCents?: boolean,
+        negativeRed?: boolean,
+        caption?: string,
+        value?: number,
+        minLimit?: number,
+        maxLimit?: number,
+        step?: number,
         dark?: boolean,
     }
 ): JSX.Element => {
-    const [quantity, setQuantity] = useState<number>(0);
-    const minLimit = 0;
-    const maxLimit = 3;
+    const [quantity, setQuantity] = useState<number>(props?.value || 0);
+    const minLimit = props?.minLimit || 0;
+    const maxLimit = props?.maxLimit || 3;
 
     const onClickMinus = (): void => {
         if (quantity > minLimit) {
-            setQuantity((prev) => prev - 1);
+            const subs: number = quantity - (props?.step || 1);
+            setQuantity(subs < minLimit ? minLimit : subs);
         };
     };
     const onClickPlus = (): void => {
         if (quantity < maxLimit) {
-            setQuantity((prev) => prev + 1);
+            const add: number = quantity + (props?.step || 1);
+            setQuantity(add > maxLimit ? maxLimit : add);
         };
     };
     const onClickAddAndContinue = (): void => {
@@ -36,7 +46,7 @@ const ZComponent = (
 
     return (
         <div className={props?.dark ? styles.containerDark : styles.containerLight}>
-            <Highlight label='¡PROMO DIPONIBLE!' color='white'
+            {/* <Highlight label='¡PROMO DIPONIBLE!' color='white'
                 backgroundColor={colors.textDanger} fontWeight='normal'
             />
             <div className={styles.benefits}>
@@ -46,11 +56,11 @@ const ZComponent = (
                     label='Excepteur sint occaecat cupidatat non proident.'
                     color={colors.textDanger} fontWeight='normal'
                 />
-            </div>
+            </div> */}
             <WithoutInputBox
-                amount={1234.567 * quantity} hideCents={true} negativeRed={false}
-                value={quantity} caption='por mes'
-                onClickMinus={onClickMinus} onClickPlus={onClickPlus}
+                amount={(props?.amount || 0) * quantity} caption={props?.caption || 'por mes'}
+                hideCents={props?.hideCents || false} negativeRed={false}
+                value={quantity} onClickMinus={onClickMinus} onClickPlus={onClickPlus}
                 plusDisabled={quantity === maxLimit}
                 dark={props?.dark}
             />

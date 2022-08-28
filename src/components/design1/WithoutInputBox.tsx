@@ -17,7 +17,20 @@ export type WithoutBoxInputProps = {
     dark?: boolean,
 };
 
-const WithoutInputBox = (props: WithoutBoxInputProps): JSX.Element => {
+const WithoutInputBox = (
+    props: {
+        amount: number,
+        caption?: string,
+        hideCents?: boolean,
+        negativeRed?: boolean,
+        value: number,
+        onClickMinus: Function,
+        onClickPlus: Function,
+        minusDisabled?: boolean,
+        plusDisabled?: boolean,
+        dark?: boolean,
+    }
+): JSX.Element => {
     const amountProps: AmountProps = {
         amount: props.amount,
         caption: props.caption || '',
@@ -33,11 +46,11 @@ const WithoutInputBox = (props: WithoutBoxInputProps): JSX.Element => {
         plusDisabled: props.plusDisabled,
         dark: props.dark,
     };
-    
+
     return (
         <div className={props.dark ? styles.containerDark : styles.containerLight}>
-            <Amount {...amountProps}/>
-            <InputNumber {...inputNumberProps}/>
+            <Amount {...amountProps} />
+            <InputNumber {...inputNumberProps} />
         </div>
     );
 };

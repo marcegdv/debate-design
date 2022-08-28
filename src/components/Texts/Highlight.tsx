@@ -19,8 +19,8 @@ const Highlight = (
 ): JSX.Element => {
 
     const fontWeight = styles[props.fontWeight || 'normal'];
-    const color = stylesColor(props.color);
-    const backgorundColor = stylesBackgorundColor(props.backgroundColor);
+    const color = stylesColor(props.color || colors.textLight);
+    const backgorundColor = stylesBackgorundColor(props.backgroundColor || colors.telefonica_sky);
 
     return (
         <span className={
@@ -58,10 +58,10 @@ const styles = {
         fontWeight: 'bolded',
     }),
     container: style({
-        padding: '0px 8px',
+        padding: '0px 8px 2px 8px',
         width: 'fit-content',
-        borderTopLeftRadius: '3px',
-        borderTopRightRadius: '3px',
-        borderBottomRightRadius: '3px',
+        borderTopLeftRadius: '4px',
+        borderTopRightRadius: '4px',
+        borderBottomRightRadius: '4px',
     }),
 };

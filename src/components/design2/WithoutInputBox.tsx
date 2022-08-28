@@ -28,7 +28,7 @@ const WithoutInputBox = (
         value: number,
         minLimit: number,
         maxLimit: number,
-        step?: number,
+        step: number,
         onChange: Function,
         dark?: boolean,
     }
@@ -38,13 +38,14 @@ const WithoutInputBox = (
 
     const onClickMinus = (): void => {
         if (props.value > props.minLimit) {
-            props.onChange(props.value - 1);
+            const subs: number = props.value - props.step;
+            props.onChange(subs < props.minLimit ? props.minLimit: subs);
         };
     };
     const onClickPlus = (): void => {
         if (props.value < props.maxLimit) {
-            const add: number = props.value + 1;
-            props.onChange(props.value + 1);
+            const add: number = props.value + props.step;
+            props.onChange(add > props.maxLimit ? props.maxLimit : add);
             setClicked(true)
             if (add === props.maxLimit) setShowTT(true);
         };
