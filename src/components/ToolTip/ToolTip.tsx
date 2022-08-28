@@ -28,12 +28,12 @@ const ToolTip = (
         const top: number | undefined = document.getElementById(props.id)?.offsetTop;
         const left: number | undefined = document.getElementById(props.id)?.offsetLeft;
         const height: number | undefined = document.getElementById(props.id)?.offsetHeight;
-        // const width: number | undefined = document.getElementById(props.id)?.offsetWidth;
-        // console.log(top, left);
+        const width: number | undefined = document.getElementById(props.id)?.offsetWidth;
+        // console.log(top, left, height, width);
         return style({
             position: 'absolute',
             top: (top || 0) - (height || 0) + 6,
-            left: (left || 0) - 14,
+            right: (width || 0) - 90,
         });
     }
 
