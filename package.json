@@ -25,7 +25,8 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "test-coverage": "jest --coverage",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "rimraf": "npx rimraf ./**/node_module"
     },
     "eslintConfig": {
         "extends": [
