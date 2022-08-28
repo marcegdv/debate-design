@@ -1,28 +1,36 @@
 import { render, screen } from '@testing-library/react';
-import Amount, { AmountProps } from './Amount';
-// import { colors } from '../../styles/colors';
+import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/extend-expect';
 
-const props: AmountProps = {
+import Amount, { AmountProps } from './Amount';
+
+const baseProps: AmountProps = {
     amount: 100,
     caption: 'test',
     hideCents: false,
     negativeRed: false,
 };
 
+let props: AmountProps;
+
 describe('Amount tests:', () => {
+
+    beforeEach(() => {
+        props = Object.assign({}, baseProps);
+    });
 
     test('renders Amount with cents', () => {
         render(<Amount {...props} />);
         const amount = screen.getByText('$100,00');
         expect(amount).toBeInTheDocument();
     });
-    
-    test('render Caption',()=>{
+
+    test('render Caption', () => {
         render(<Amount {...props} />);
         const caption = screen.getByText('test');
         expect(caption).toBeInTheDocument();
     });
-    
+
     test('render Amount without cents', () => {
         props.hideCents = true;
         render(<Amount {...props} />);
@@ -30,19 +38,18 @@ describe('Amount tests:', () => {
         expect(amount).toBeInTheDocument();
     });
 
-    test('render Amount in when negative',()=>{
+    test('render Amount in colors.textDanger when negative', () => {
         props.amount = -100;
         props.negativeRed = true;
         render(<Amount {...props} />);
-        const amount = screen.getByText('$-100');
+        const amount = screen.getByText('$-100,00');
         expect(amount).toBeInTheDocument();
-        console.log(amount);
     });
-    
+
     test('render component in dark mode', () => {
         props.dark = true;
         render(<Amount {...props} />);
-        const amount = screen.getByText('$-100');
+        const amount = screen.getByText('$100,00');
         expect(amount).toBeInTheDocument();
     });
 

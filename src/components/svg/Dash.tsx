@@ -1,3 +1,7 @@
+export type DashProps = {
+    lg?: boolean,
+};
+
 const Dash = (
     props: {
         lg?: boolean,

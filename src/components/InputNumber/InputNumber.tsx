@@ -13,7 +13,16 @@ export type InputNumberProps = {
     dark?: boolean,
 };
 
-const InputNumber = (props: InputNumberProps): JSX.Element => {
+const InputNumber = (
+    props: {
+        value: number,
+        onClickMinus: Function,
+        onClickPlus: Function,
+        minusDisabled?: boolean,
+        plusDisabled?: boolean,
+        dark?: boolean,
+    }
+): JSX.Element => {
     return (
         <div className={styles.container}>
             <div className={props.dark ? styles.subContainerDark : styles.subContainerLight}>
@@ -21,8 +30,9 @@ const InputNumber = (props: InputNumberProps): JSX.Element => {
                     className={styles.minusButton}
                     onClick={props.onClickMinus as MouseEventHandler}
                     disabled={props.minusDisabled}
-                >
-                    <Dash lg/>
+                    data-testid="inputNumberMinusButton"
+                    >
+                    <Dash lg />
                 </button>
                 <div className={props.dark ? styles.valueDark : styles.valueLight}>
                     {props.value}
@@ -31,8 +41,9 @@ const InputNumber = (props: InputNumberProps): JSX.Element => {
                     className={styles.plusButton}
                     onClick={props.onClickPlus as MouseEventHandler}
                     disabled={props.plusDisabled}
+                    data-testid="inputNumberPlusButton"
                 >
-                    <Plus lg/>
+                    <Plus lg />
                 </button>
             </div>
         </div>

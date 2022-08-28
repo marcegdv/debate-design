@@ -1,3 +1,7 @@
+export type PlusProps = {
+    lg?: boolean,
+};
+
 const Plus = (
     props: {
         lg?: boolean,

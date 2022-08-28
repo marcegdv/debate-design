@@ -1,6 +1,12 @@
 import { style } from "typestyle";
 import { colors } from "../../styles/colors";
 
+export type CloseProps = {
+    color?: string,
+    backgroundColor?: string,
+    hoverColor?: string,
+};
+
 const Close = (
     props: {
         color?: string,
@@ -17,7 +23,7 @@ const Close = (
             color: color,
             backgroundColor: backgroundColor,
             $nest: {
-                '&:hover':{
+                '&:hover': {
                     color: hoverColor,
                 },
             },
