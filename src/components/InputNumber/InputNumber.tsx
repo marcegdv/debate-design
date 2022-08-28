@@ -22,7 +22,7 @@ const InputNumber = (props: InputNumberProps): JSX.Element => {
                     onClick={props.onClickMinus as MouseEventHandler}
                     disabled={props.minusDisabled}
                 >
-                    <Dash />
+                    <Dash lg/>
                 </button>
                 <div className={props.dark ? styles.valueDark : styles.valueLight}>
                     {props.value}
@@ -32,7 +32,7 @@ const InputNumber = (props: InputNumberProps): JSX.Element => {
                     onClick={props.onClickPlus as MouseEventHandler}
                     disabled={props.plusDisabled}
                 >
-                    <Plus />
+                    <Plus lg/>
                 </button>
             </div>
         </div>

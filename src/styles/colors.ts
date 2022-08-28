@@ -13,4 +13,5 @@ export const colors = {
     textLight: '#fafafa',
     textSecondary: '#7c7c7c',
     textDanger: '#df1144',
+    textWarning: '#ff7f0f',
 };
