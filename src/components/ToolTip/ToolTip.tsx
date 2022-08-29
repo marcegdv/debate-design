@@ -72,16 +72,22 @@ const styles: any = {
 
     }),
     close: style({
-        height: '20px',
-        width: '20px',
+        // height: '40px',
+        // width: '16px',
+        overflow:'hidden',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         position: 'absolute',
         top: '2px',
         right: '2px',
-        border: 'none',
-        borderRadius: '2px',
-        backgroundColor: colors.textSecondary,
+        borderRadius: '4px',
+        backgroundColor: colors.cardBorderLight,
+        $nest: {
+            '&:hover':{
+                color: colors.textLight,
+                backgroundColor: colors.textDanger,
+            }
+        }
     }),
 };

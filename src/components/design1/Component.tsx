@@ -58,7 +58,7 @@ const ZComponent = (
                 />
             </div> */}
             <WithoutInputBox
-                amount={(props?.amount || 0) * quantity} caption={props?.caption || 'por mes'}
+                amount={(props?.amount || 0)} caption={props?.caption || 'por mes'}
                 hideCents={props?.hideCents || false} negativeRed={false}
                 value={quantity} onClickMinus={onClickMinus} onClickPlus={onClickPlus}
                 plusDisabled={quantity === maxLimit}

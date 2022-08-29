@@ -24,7 +24,7 @@ const Home = (
             <FullWidth dark={isDark}>
                 <Card title='Diseño nº 2' dark={isDark}>
                     <ComponentV2
-                        amount={1234.567} hideCents={true} caption='por mes'
+                        amount={690} hideCents={true} caption='por mes'
                         value={0} minLimit={0} maxLimit={3} step={1}
                         dark={isDark}
                     />
