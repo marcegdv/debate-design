@@ -17,7 +17,6 @@ const styles = {
         padding: '8px',
     }),
     amount: style({
-        fontFamily: 'sans-serif',
         fontSize: '24px',
         fontWeight: '500',
     }),
@@ -33,7 +32,6 @@ const styles = {
     caption: style({
         paddingLeft: '5px',
         paddingTop: '8px',
-        fontFamily: 'sans-serif',
         fontSize: '16px',
         fontWeight: '200',
         color: colors.textSecondary,
