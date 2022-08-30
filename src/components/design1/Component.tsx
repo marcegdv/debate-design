@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { style } from 'typestyle';
 import { colors } from '../../styles/colors';
 
-import Highlight from '../Texts/Highlight';
-import Item from '../List/Item';
-import Texts from '../Texts/Texts';
+// import Highlight from '../Texts/Highlight';
+// import Item from '../List/Item';
+// import Texts from '../Texts/Texts';
 import WithoutInputBox from './WithoutInputBox';
 import TwoButtons from '../Buttons/TwoButtons/TwoButtons';
 

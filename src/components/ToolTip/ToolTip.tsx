@@ -26,7 +26,7 @@ const ToolTip = (
 ) => {
     const getPosition = () => {
         const top: number | undefined = document.getElementById(props.id)?.offsetTop;
-        const left: number | undefined = document.getElementById(props.id)?.offsetLeft;
+        // const left: number | undefined = document.getElementById(props.id)?.offsetLeft;
         const height: number | undefined = document.getElementById(props.id)?.offsetHeight;
         const width: number | undefined = document.getElementById(props.id)?.offsetWidth;
         // console.log(top, left, height, width);
