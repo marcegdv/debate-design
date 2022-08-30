@@ -17,9 +17,11 @@ export const colors = {
 };
 
 export const dark = {
-
+    text: '#fafafa',
+    textSecondary: '#a0a0a0',
 };
 
 export const light = {
-
+    text: '#4c4c4c',
+    textSecondary: '#7c7c7c',
 };
