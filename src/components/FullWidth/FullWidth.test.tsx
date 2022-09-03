@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import FullWidth, { FullWidthProps } from './FullWidth';
@@ -8,10 +8,10 @@ const baseProps: FullWidthProps = {
     dark: false,
     children: <div>{childrenText}</div>,
 };
-let props: FullWidthProps;
 
 describe('FullWidth tests:', () => {
-
+    
+    let props: FullWidthProps;
     beforeEach(() => {
         props = Object.assign({}, baseProps);
     });

@@ -7,10 +7,10 @@ const baseProps: CloseProps = {
     backgroundColor: undefined,
     hoverColor: undefined,
 };
-let props: CloseProps;
 
 describe('Close tests:', () => {
-
+    
+    let props: CloseProps;
     beforeEach(() => {
         props = Object.assign({}, baseProps);
     });

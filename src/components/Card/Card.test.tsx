@@ -9,10 +9,10 @@ const baseProps: CardProps = {
     dark: false,
     children: <div>{childrenText}</div>,
 };
-let props: CardProps;
 
 describe('Card tests:', () => {
-
+    
+    let props: CardProps;
     beforeEach(() => {
         props = Object.assign({}, baseProps);
     });

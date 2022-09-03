@@ -6,10 +6,9 @@ const baseProps: DashProps = {
     lg: undefined,
 };
 
-let props: DashProps;
-
 describe('Close tests:', () => {
-
+    
+    let props: DashProps;
     beforeEach(() => {
         props = Object.assign({}, baseProps);
     });

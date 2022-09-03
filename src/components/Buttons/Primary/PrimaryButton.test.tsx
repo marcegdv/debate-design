@@ -13,10 +13,10 @@ const baseProps: PrimaryButtonProps = {
     disabled: false,
     dark: false,
 };
-let props: PrimaryButtonProps;
 
 describe('PrimaryButton tests:', () => {
-
+    
+    let props: PrimaryButtonProps;
     beforeEach(() => {
         mockOnClick.mockClear();
         mockOnKeyDown.mockClear();

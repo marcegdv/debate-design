@@ -14,10 +14,9 @@ const baseProps: InputNumberProps = {
     dark: false,
 };
 
-let props: InputNumberProps;
-
 describe('Amount tests:', () => {
-
+    
+    let props: InputNumberProps;
     beforeEach(() => {
         mockFunction.mockClear();
         props = Object.assign({}, baseProps);

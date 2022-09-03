@@ -11,10 +11,9 @@ const baseProps: AmountProps = {
     negativeRed: false,
 };
 
-let props: AmountProps;
-
 describe('Amount tests:', () => {
-
+    
+    let props: AmountProps;
     beforeEach(() => {
         props = Object.assign({}, baseProps);
     });
