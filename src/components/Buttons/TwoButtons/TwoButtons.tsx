@@ -8,6 +8,8 @@ export type TwoButtonsProps = {
     secondaryLabel: string,
     primaryOnClick: Function,
     secondaryOnClick: Function,
+    primaryOnKeyDown?: Function,
+    secondaryOnKeyDown?: Function,
     primaryDisabled?: boolean,
     secondaryDisabled?: boolean,
     dark?: boolean,
@@ -17,12 +19,14 @@ const TwoButtons = (props: TwoButtonsProps): JSX.Element => {
     const primaryProps: PrimaryButtonProps = {
         label: props.primaryLabel,
         onClick: props.primaryOnClick,
+        onKeyDown: props.primaryOnKeyDown,
         disabled: props.primaryDisabled,
         dark: props.dark,
     };
     const secondaryProps: SecondaryButtonProps = {
         label: props.secondaryLabel,
         onClick: props.secondaryOnClick,
+        onKeyDown: props.secondaryOnKeyDown,
         disabled: props.secondaryDisabled,
         dark: props.dark,
     };
